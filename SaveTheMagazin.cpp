@@ -28,42 +28,39 @@ void input(int i,int n,vector<int>&a){
 void solve(){
     int n;
     cin >> n;
+    string s;
+    cin >> s;
     vector<int> a(n);
     input(0, n, a);
-    pair<int,int> prf[n];
-    prf[n - 1] = {0,0};
-    if((prf[n-1].first==0)){
-        prf[n - 1].first = 1;
-        prf[n - 1].second = 0;
+    ll ans = 0;
+    int i = 0;
+    while(i<n&&s[i]=='1'){
+        ans += a[i];
+        i++;
     }
-    int ans = 0;
-    for (int i =n-2; i >=0;i--){
-         if(a[i]==0){
-             prf[i] = {prf[i + 1].first+ 1,ans};
-         }
-       
-         if(a[i]==1){
-             prf[i].first = prf[i + 1].first;
-             ans += prf[i].first;
-             prf[i].second = ans;
-         }
-    }
-    int maxi = ans;
-    int one = 0;
-    for (int i = 0; i < n;i++){
-        if(a[i]==0){
-             maxi = max(prf[0].first-one+prf[i].first-1,maxi);
-        }
-        else{
-             maxi = max(prf[0].second + one - prf[i].first, maxi);
-             one++;
-        }
-    }
-    if(maxi==0){
-        cout << n - 1 << endl;
+    if(i==n){
+        cout << ans << endl;
         return;
     }
-    cout << maxi << endl;
+    for (int j = i+1; j < n;j++){
+        
+        if(s[j]=='1'){
+            int mini = INT_MAX;
+            int sum = 0;
+            while (j < n && s[j] == '1')
+            {
+                sum += a[j - 1];
+                mini = min(a[j - 1], mini);
+                j++;
+           }
+           mini = min(a[j - 1], mini);
+           sum += a[j - 1];
+           ans += sum - mini;
+        }
+
+
+    }
+    cout << ans << endl;
 }
  
  
