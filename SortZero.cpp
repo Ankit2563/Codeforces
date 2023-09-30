@@ -63,7 +63,7 @@ void solve(){
               s2.insert(a[i]);
           }
     }
-
+ 
     cout << max(s1.size(), s2.size()) << endl;
     return;
 }
