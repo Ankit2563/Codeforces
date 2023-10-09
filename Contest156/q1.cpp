@@ -37,8 +37,23 @@ void inputi(int i, int n, vector<int> &a)
 
 void solve()
 {
-    
-    
+    int n;
+    cin >> n;
+    if(n<=6||n==9){
+        NO;
+    }
+    else{
+      
+        int x = 1,y;
+        if((n-x-2)%3==0){
+            y = 4;
+        }
+        else{
+            y = 2;
+        }
+        YES;
+        cout << x << " " << y << " " << n - x - y << endl;
+    }
 }
 
 int main()
