@@ -2,7 +2,6 @@
 using namespace std;
 #define ll long long
 #define vi vector<int>
-#define vl vector<ll>
 #define vpi vector<pair<long long, long long>>
 #define vint vector<int>
 #define all(v) v.begin(), v.end()
@@ -18,15 +17,7 @@ using namespace std;
 #define ld long double
 #define NO cout << "NO" << endl
 #define YES cout << "YES" << endl
-void inputl(int i, int n, vector<long long> &a)
-{
-    for (int k = i; k < n; k++)
-    {
-        cin >> a[k];
-    }
-    return;
-}
-void inputi(int i, int n, vector<int> &a)
+void input(int i, int n, vector<int> &a)
 {
     for (int k = i; k < n; k++)
     {
@@ -40,19 +31,27 @@ void solve()
     int n;
     cin >> n;
     vi a(n);
-    inputi(0, n, a);
-    int mini = INT_MAX;
-    for (int i = 0; i < n;i++){
-        mini = min(abs(a[i]), mini);
+    input(0, n, a);
+    sort(a.begin(), a.end());
+    ll ans = (1LL * a[n - 1] * 1LL * a[n - 2]);
+    ll ans1 = (1LL * a[0] * 1LL * a[1]);
+    if(ans>ans1){
+        
+        cout << ans << endl;
     }
-    cout << mini << endl;
+    else{
+        cout << ans1 << endl;
+    }
 }
 
 int main()
 {
 
- 
+    int t;
+    cin >> t;
+    while (t--)
+    {
 
         solve();
-   
+    }
 }
