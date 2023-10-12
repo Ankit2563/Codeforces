@@ -28,32 +28,16 @@ void input(int i, int n, vector<int> &a)
 
 void solve()
 {
-    int n,t;
-    cin >> n >> t;
-    vi a(n); 
-    vi b(n);
-    input(0, n, a);
-    input(0, n, b);
 
-    int cnt = 0;
-    for (int i = 0; i < n;i++){
-        a[i] += cnt;
-        cnt++;
+    int n;
+    cin >> n;
+    long long ans=1;
+    ll p = (n - 1) * n;
+    for(int i = 1; i <=n;i++){
+        ans = (ans * 1LL * i) % 1000000007;
     }
-    int index = -1;
-    int ent = -1;
-    for (int i = 0; i < n; i++)
-    {
-        if(a[i]<=t){
-            if(ent<b[i]){
-                index = i + 1;
-                ent = b[i];
-            }
-        }
-
-    }
-    cout << index << endl;
-
+    ans = ans % 1000000007;
+    cout << (ans * 1LL * (((n - 1) * 1LL * 1LL*n) % 1000000007)) % 1000000007 << endl;
 }
 
 int main()
@@ -63,7 +47,7 @@ int main()
     cin >> t;
     while (t--)
     {
-       
+
         solve();
     }
 }

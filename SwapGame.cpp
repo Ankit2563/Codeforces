@@ -37,9 +37,29 @@ void inputi(int i, int n, vector<int> &a)
 
 void solve()
 {
-    
-    
+    int n;
+    cin >> n;
+    vi a(n);
+    inputi(0, n, a);
+    priority_queue<int, vector<int>, greater<int>> q;
+    for (int i = 1; i < n;i++){
+        q.push(a[i]);
+    }
+    int count = 0;
+    if(a[0]==0){
+        cout << "Bob" << endl;
+        return;
+    }
+
+    int f = q.top();
+    if(f>=a[0]){
+        cout << "Bob" << endl;
+    }
+    else{
+        cout << "Alice" << endl;
+    }
 }
+
 
 int main()
 {

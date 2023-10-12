@@ -30,31 +30,30 @@ void solve()
 {
     int n;
     cin >> n;
-    if(n==1){
-        cout << 1 << endl;
-        return;
-    }
- 
-    if(n%2==1){
-        cout << -1 << endl;
-    }
-    else{
-        int l= n;
-        int s = 1;
-        for (int i = 0; i < n;i++){
-             if(i%2==0){
-                 cout << l << " ";
-                 l -= 2;
-             }
-             else{
-                 cout << s << " ";
-                 s +=2;
-             }
+    vi a(n);
+    input(0, n, a);
+    int ans = 0;
+    for (int i = 0; i < n;i++){
+        int cnt = 0;
+        if(a[i]%2==0){
+           while(i<n&&a[i]%2==0){
+               cnt++;
+               i++;
+           }
         }
-        cout << endl;
+        else{
+           while (i <n && a[i] % 2 == 1)
+           {
+               cnt++;
+               i++;
+           }
+        }
+        i--;
+        cnt--;
+        ans += cnt;
     }
+    cout << ans << endl;
 }
-
 
 int main()
 {
