@@ -35,35 +35,56 @@ void inputi(int i, int n, vector<int> &a)
     return;
 }
 
+
 void solve()
 {
-    int n, q;
-    cin >> n >> q;
-    vi a(n); 
-    vi b(q);
-    inputi(0, n, a);
-    inputi(0, q, b);
-    map<long long, int> m;
-    vl prefix(n);
-    prefix[0] = a[0];
-    for (int i = 1; i < n;i++){
-        prefix[i] = prefix[i - 1] + (ll)a[i];
+    int n,k;
+    cin >> n>>k;
+    string s;
+    cin >> s;
+   
+    if(k%2==0){
+        sort(s.begin(), s.end());
+        cout << s << endl;
+        return;
     }
-    int maxi = -1;
+
+    string s1, s2;
+
     for (int i = 0; i < n;i++){
-        a[i] = max(a[i], maxi);
-        maxi = a[i];
-    }
-    for (int i = 0; i < q;i++){
-        int search = b[i];
-        int idx = upper_bound(a.begin(), a.end(),search)-a.begin();
-        if(idx==0){
-            cout << 0 << " ";
+        if(i%2==0){
+            s1 += s[i];
         }
-        else
-        cout << prefix[idx - 1] << " ";
+        else{
+            s2 += s[i];
+        }
+    }
+    sort(s1.begin(), s1.end());
+    sort(s2.begin(), s2.end());
+    bool curr = true;
+    int i = 0, j = 0;
+   
+    bool temp = false;
+   
+    for (; i < s1.size() && j < s2.size();){
+      
+            cout << s1[i];
+            cout << s2[j];
+            j++;
+            i++;
+        }
+    while(i<s1.size()){
+        cout << s1[i];
+        i++;
+    }
+
+    while (j < s2.size())
+    {
+        cout << s2[j];
+        j++;
     }
     cout << endl;
+    return;
 }
 
 int main()
