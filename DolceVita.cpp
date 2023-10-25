@@ -1,0 +1,98 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define vi vector<int>
+#define vl vector<ll>
+#define vpi vector<pair<long long, long long>>
+#define vint vector<int>
+#define all(v) v.begin(), v.end()
+#define MOD 1000000007
+#define MOD2 998244353
+#define MX 1000000000
+#define MXL 1000000000000000000
+#define PI (ld)2 * acos(0.0)
+#define pb push_back
+#define sc second
+#define fr first
+#define endl '\n'
+#define ld long double
+#define NO cout << "NO" << endl
+#define YES cout << "YES" << endl
+void inputl(int i, int n, vector<long long> &a)
+{
+    for (int k = i; k < n; k++)
+    {
+        cin >> a[k];
+    }
+    return;
+}
+void inputi(int i, int n, vector<int> &a)
+{
+    for (int k = i; k < n; k++)
+    {
+        cin >> a[k];
+    }
+    return;
+}
+
+void solve()
+{
+    int n, x;
+    cin >> n >> x;
+    vi a(n);
+    inputi(0, n, a);
+    sort(a.begin(), a.end());
+    vl prefix(n);
+    prefix[0] = a[0];
+    for (int i = 1; i < n; i++)
+    {
+        prefix[i] = prefix[i - 1] + a[i];
+    }
+    int j = n - 1;
+    int increase = 0;
+    long long ans = 0;
+    while (j >= 0)
+    {
+        if (prefix[j] + (increase) * (j + 1) > x)
+        {
+            while (j >= 0 && prefix[j] + increase * (ll)(j + 1) > x)
+            {
+                j--;
+            }
+            //ans += (j + 1);
+        }
+        else
+        {
+            int div=0;
+            ll no = (x - (prefix[j] + increase * 1LL * (j + 1)));
+            if(no>=0){
+                if(no==0){
+                    div = 1;
+                }
+                else{
+                    div = 1 + no/n;
+                }
+                ans += (j + 1) * (div);
+                //j--;
+                increase += div;
+            }
+            else
+                break;
+        }
+        
+    }
+    cout << ans << endl;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int tt;
+    cin >> tt;
+    for (int i = 1; i <= tt; i++)
+    {
+        solve();
+    }
+    // solve();
+}
