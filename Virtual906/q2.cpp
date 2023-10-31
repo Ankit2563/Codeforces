@@ -57,47 +57,46 @@ void inputvvc(int k, int p, int n, int m, vector<vector<char>> &v)
 
 void solve()
 {
-    int n;
-    cin >> n;
-    vi a(n);
-    inputi(0, n, a);
-    map<int, int> s;
-    for (int i = 0; i < n; i++)
-        s[a[i]]++;
+    int n, m;
+    cin >> n >> m;
+    string s1, s2;
+    cin >> s1;
+    cin >> s2;
 
-    if (s.size() == 1)
-    {
+    int cnt = 0;
+    for (int i = 0; i < n - 1;i++){
+        if(s1[i]==s1[i+1]){
+            cnt++;
+        }
+    }
+    if(cnt==0){
         YES;
         return;
     }
-    else if (s.size() == 2)
+    for (int i = 0; i < m - 1; i++)
     {
-        int first = 0, second = 0;
-        for (auto &it : s)
+        if (s2[i] == s2[i + 1])
         {
-            if (first == 0)
-            {
-                first = it.second;
-
-                continue;
-            }
-            if (second == 0)
-            {
-                second = it.second;
-                continue;
-            }
-        }
-        if(abs(first-second)<=1){
-            YES;
-        }
-        else{
             NO;
+            return;
         }
     }
-    else
-    {
-        NO;
+    for (int i = 0; i < n - 1;i++){
+        if(s1[i]=='1'&&s1[i+1]=='1'){
+            if(s2[0]=='1'||s2[m-1]=='1'){
+                NO;
+                return;
+            }
+        }
+         if(s1[i]=='0'&&s1[i+1]=='0'){
+            if (s2[0] == '0' || s2[m - 1] == '0')
+            {
+                NO;
+                return;
+            }
+         }
     }
+    YES;
 }
 
 int main()
