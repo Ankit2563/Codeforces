@@ -57,53 +57,11 @@ void inputvvc(int k, int p, int n, int m, vector<vector<char>> &v)
 
 void solve()
 {
-    int n, m;
-    cin >> n >> m;
-    string s1, s2;
-    cin >> s1;
-    cin >> s2;
-
-    int cnt = 0;
-    for (int i = 0; i < n - 1; i++)
-    {
-        if (s1[i] == s1[i + 1])
-        {
-            cnt++;
-        }
-    }
-    if (cnt == 0)
-    {
-        YES;
-        return;
-    }
-    for (int i = 0; i < m - 1; i++)
-    {
-        if (s2[i] == s2[i + 1])
-        {
-            NO;
-            return;
-        }
-    }
-    for (int i = 0; i < n - 1; i++)
-    {
-        if (s1[i] == '1' && s1[i + 1] == '1')
-        {
-            if (s2[0] == '1' || s2[m - 1] == '1')
-            {
-                NO;
-                return;
-            }
-        }
-        if (s1[i] == '0' && s1[i + 1] == '0')
-        {
-            if (s2[0] == '0' || s2[m - 1] == '0')
-            {
-                NO;
-                return;
-            }
-        }
-    }
-    YES;
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    
 }
 
 int main()
