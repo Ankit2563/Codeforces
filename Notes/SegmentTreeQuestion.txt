@@ -1,0 +1,199 @@
+#set And Multiset Concept:
+
+for set:
+arrarnge in sorted ordered
+insertion: s.insert(no)
+search: auto it=s.find(no) if not present then return s.end()  complexity (log(n))
+for deletion two ways either throught iterator(O(log(n))) or throught directly the no O(log(n))
+
+
+for multiset 
+arrarnge in sorted ordered
+insertion: s.insert(no)
+search: auto it=s.find(no) return the first occurance of element iterator
+if not present then return s.end()  complexity (log(n))
+for deletion two ways either throught iterator(O(log(n))) delete the first occurance of the number or throught directly through no s.erase(number)  in this all the occurance of the number will be deleted O(log(n))
+
+for unordered set and multiset the complexity will gonna O(1);
+
+
+
+
+
+
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds; 
+typedef tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_multiset;
+class Solution {
+public:
+  
+
+    vector<int> resultArray(vector<int>& nums) {
+        int n=nums.size();
+        vector<int>arr1;
+        vector<int>arr2;
+        arr1.push_back(nums[0]);
+        arr2.push_back(nums[1]);
+        ordered_multiset m1;
+        ordered_multiset m2;
+        m1.insert(nums[0]);
+        m2.insert(nums[1]);
+        for(int i=2;i<n;i++){
+            int n1=arr1.size();
+            int n2=arr2.size();
+            int index1=m1.size()-m1.order_of_key(nums[i]+1);
+            int index2=m2.size()-m2.order_of_key(nums[i]+1);
+            if(index1>index2){
+                arr1.push_back(nums[i]);
+                m1.insert(nums[i]);
+            }
+            else if(index1<index2){
+                arr2.push_back(nums[i]);
+                m2.insert(nums[i]);
+                
+            }
+            else{
+                int size1=arr1.size();
+                int size2=arr2.size();
+                if(size2<size1){
+                    arr2.push_back(nums[i]);
+                m2.insert(nums[i]);
+                }
+                else{
+                   arr1.push_back(nums[i]);
+                m1.insert(nums[i]);  
+                }
+                
+            }
+            
+        }
+        vector<int>res;
+        for(int i=0;i<arr1.size();i++){
+            res.push_back(arr1[i]);
+        }
+         for(int i=0;i<arr2.size();i++){
+            res.push_back(arr2[i]);
+        }
+        return res; 
+    }
+    
+};
+
+
+
+
+
+
+
+Gfg Content
+The g++ compiler also supports some data structures that are not part of the C++ standard library. Such structures are called policy-based data structures. These data structures are designed for high-performance, flexibility, semantic safety, and conformance to the corresponding containers in std.
+To use these structures, the following lines must be added to the code: 
+For example, following is a code showing a policy-based data structure that is like set, it can add/remove elements, can find the number of elements less than x, kth smallest element etc in O(logn) time. It can also be indexed like an array. The specialty of this set is that we have access to the indices that the elements would have in a sorted array. If the element does not appear in the set, we get the position that the element would have in the set.
+ 
+
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+
+// Program showing a policy-based data structure.
+#include <ext/pb_ds/assoc_container.hpp> // Common file
+#include <ext/pb_ds/tree_policy.hpp>
+#include <functional> // for less
+#include <iostream>
+using namespace __gnu_pbds;
+using namespace std;
+ 
+// a new data structure defined. Please refer below
+// GNU link : https://goo.gl/WVDL6g
+typedef tree<int, null_type, less_equal<int>, rb_tree_tag,
+             tree_order_statistics_node_update>
+    ordered_multiset;
+ 
+// Driver code
+int main()
+{
+    ordered_multiset p;
+    p.insert(5);
+    p.insert(5);
+    p.insert(5);
+    p.insert(2);
+    p.insert(2);
+    p.insert(6);
+    p.insert(4);
+ 
+    for (int i = 0; i < (int)p.size(); i++) {
+ 
+        cout << "The element present at the index " << i
+             << " is ";
+ 
+        // Print element present at the ith index
+        cout << *p.find_by_order(i) << ' ';
+        cout << '\n';
+    }
+ 
+    return 0;
+}
+
+Output
+The element present at the index 0 is 2 
+The element present at the index 1 is 2 
+The element present at the index 2 is 4 
+The element present at the index 3 is 5 
+The element present at the index 4 is 5 
+The element present at the index 5 is 5 
+The element present at the index 6 is 6 
+
+
+
+
+
+
+For Multiset 
+
+
+ Program showing a policy-based data structure.
+#include <ext/pb_ds/assoc_container.hpp> // Common file
+#include <ext/pb_ds/tree_policy.hpp>
+#include <functional> // for less
+#include <iostream>
+using namespace __gnu_pbds;
+using namespace std;
+ 
+// a new data structure defined. Please refer below
+// GNU link : https://goo.gl/WVDL6g
+typedef tree<int, null_type, less_equal<int>, rb_tree_tag,
+             tree_order_statistics_node_update>
+    ordered_multiset;
+ 
+// Driver code
+int main()
+{
+    ordered_multiset p;
+    p.insert(5);
+    p.insert(5);
+    p.insert(5);
+    p.insert(2);
+    p.insert(2);
+    p.insert(6);
+    p.insert(4);
+ 
+    for (int i = 0; i < (int)p.size(); i++) {
+ 
+        cout << "The element present at the index " << i
+             << " is ";
+ 
+        // Print element present at the ith index
+        cout << *p.find_by_order(i) << ' ';
+        cout << '\n';
+    }
+ 
+    return 0;
+}
+
+Output
+The element present at the index 0 is 2 
+The element present at the index 1 is 2 
+The element present at the index 2 is 4 
+The element present at the index 3 is 5 
+The element present at the index 4 is 5 
+The element present at the index 5 is 5 
+The element present at the index 6 is 6 

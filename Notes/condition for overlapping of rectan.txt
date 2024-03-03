@@ -1,0 +1,9 @@
+condition for overlapping of rectangle:-
+
+ long long x1=bottomLeft[i][0],y1=bottomLeft[i][1],x2=topRight[i][0],y2=topRight[i][1];
+                long long x3=bottomLeft[j][0],y3=bottomLeft[j][1],x4=topRight[j][0],y4=topRight[j][1];
+                long long a1=max(x1,x3),b1=max(y1,y3);
+                long long a2=min(x2,x4),b2=min(y2,y4);
+                if(a1>a2||b1>b2){
+                    continue;
+                }
