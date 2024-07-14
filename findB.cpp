@@ -34,43 +34,18 @@ void inputi(int i, int n, vector<int> &a)
     }
     return;
 }
-long long getNo(vi &a)
-{
-    ll no = 0;
-    for (int i = 0; i < 64; i++)
-    {
-        no += (1LL << i) * a[i]; // Using bit manipulation to set the ith bit
-    }
-    return no;
-}
 
 void solve()
 {
-    int k, x, a;
-    cin >> k >> x >> a;
-    int count = 0;
-    for (int i = 0; i <= x;i++){
-        int lossNo = i;
-        int profitNo = x - i;
-        int profit = k * (x - i);
-        if(a<=x){
-            NO;
-            return;
-        }
-        if(profit+k<=lossNo){
-            NO;
-            return;
-        }
-        
-    }
-    YES;
-    return;
+   
 }
+
+
 int main()
 {
-    int n;
-    cin >> n;
-    while (n--)
+    int t;
+    cin >> t;
+    while (t--)
     {
         solve();
     }
