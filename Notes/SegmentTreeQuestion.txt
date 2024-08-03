@@ -139,7 +139,7 @@ The element present at the index 6 is 6
 
 
 
-2nd solution if we want to see the how many element is bigger thant the nums[i] in a vector
+1nd solution if we want to see the how many element is bigger thant the nums[i] in a vector
 class Solution {
 public:
     vector<int> resultArray(vector<int>& nums) {
