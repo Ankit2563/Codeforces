@@ -1,0 +1,181 @@
+%------------------------
+% Resume Template
+% Author : Abhisekh Yadav
+% Github : https://github.com/bcsabhisekh
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,20pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Ankit Singh Chauhan}} \\
+  \textbf{Email}: \href{mailto:}{singhkit2563@gmail.com} \hspace{8.5cm} \textbf{Mobile}:~~~+91-9919882063 \\
+  
+  \href{https://linkedin.com/in/ankit2563}{\textbf{Linkedin}: ankit25} \hspace{1cm}
+ \href{https://github.com/Ankit2563}{\textbf{Github}: Ankit2563} \hspace{1 cm}
+ \href{https://leetcode.com/Ankit_07_/}{\textbf{Leetcode}: Ankit2563} \hspace{1 cm}
+\href{https://codeforces.com/profile/Ankit_2563}{\textbf{Codeforces}: Ankit25} \\
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{\textbf{EDUCATION}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Dr.B R Ambedkar National Institute of Technology Jalandhar}{Punjab, India}
+      {Bachelor of Technology - Computer Science and Engineering;  }{2021 - 2025}
+      {\scriptsize \textit{ \footnotesize{\newline{}\textbf{Courses:} Data Structures, Design and Analysis Of Algorithms, Operating Systems, Computer Networks, Java, Object Oriented Programming, Database Management System, Machine Learning}}}
+    \resumeSubHeadingListEnd
+	    
+\vspace{-5pt}
+
+\section{\textbf{SKILLS}}
+	\resumeSubHeadingListStart
+	\resumeSubItem{Programming Languages}{~C/C++, JavaScript,Java, Python, SQL}
+	\resumeSubItem{Web Technology and Frameworks}{~HTML,CSS,Node.js,MongoDB}
+	\resumeSubItem{Developer Tools}{~Git \&  GitHub, MySQL, VS Code}
+	\resumeSubItem{Database Management System}{~MySql, MongoDB}
+	
+
+\resumeSubHeadingListEnd 
+
+%-----------EXPERIENCE--------------
+\vspace{-5pt}
+\section{\textbf{Experience}}
+
+
+\href{}{\textbf{Wipro Talent Next}}: 
+\begin{itemize}
+\item   Wipro TalentNext Training Program focused on Java Full Stack Development, covering Java and J2EE from basics to advanced levels.
+\item Demonstrated coding proficiency through three milestone assessments, leading to successful completion of the program.
+\item Gained hands-on experience in developing and deploying full-stack applications using Java technologies. 
+
+\end{itemize} 
+\vspace{2pt}
+%-----------PROJECTS-----------------
+
+\vspace{-5pt}
+
+
+
+\section{\textbf{PROJECTS}}
+
+\href{https://github.com/Ankit2563/Phishing_URL_Detection}{\textbf{Phishing URL Detection Project}}:  
+\begin{itemize}
+\item Innovated a cutting-edge Phishing URL Detection system using Machine Learning; achieved a significant reduction in phishing attacks, enhancing cybersecurity for many users .
+
+\item Achieved high accuracy \textbf{96-percentage }through training on diverse \textbf{ datasets }and fine-tuning techniques.  expertise in \textbf {Python,Flask,Jinja-2 and various Machine Learning }libraries.
+\item Utilized the powerful \textbf {Gradient Boosting }Algorithm exclusively in our model training, showcasing a focused and effective approach to achieve optimal phishing URL detection accuracy.
+\end{itemize} 
+\vspace{2pt}
+
+\href{https://github.com/Ankit2563/Health-And-Fitness-Guide-}{\textbf{ Health and Fitness Web Platform}}: 
+\begin{itemize}
+\item  Implemented a robust user \textbf{authentication }  system for secure registration and login.
+\item Comprehensive health and fitness platform featuring personalized \textbf{workout} plans, \textbf{nutrition} guidance, and resources.
+\item Employed \textbf{JavaScript, Node.js, Express, and MongoDB}  for backend development, ensuring seamless data storage and retrieval. 
+\item Developed \textbf{responsive } design, engaging \textbf{features}, and interactive elements, promoting user commitment to health and wellness.
+
+\end{itemize} 
+\vspace{2pt}
+%-----------Awards-----------------
+\section{\textbf{ACHIEVEMENTS}}
+\begin{description}[font=$\bullet$]
+\item { Solved more than \textbf{650}, Data Structure and Algorithm based problems on the leetcode}
+\vspace{-5pt}
+\item {Secured \textbf{156/38k} rank worldwide in CodeRush September'23 .}
+\vspace{-5pt}
+\item {Secured \textbf{3150/25k} rank in leetcode Weekly Contest 355 2023}
+\vspace{-5pt}
+\item  top {\textbf{8 percent(max 1777 rating)} at leetcode}
+\vspace{-5pt}
+\item {Solved more than \textbf{300} Competitive Programming  based problems on multiple platforms such as Codeforces,Codechef}
+\end{itemize} 
+\vspace{2pt}
+%-----------MOOC-------------%
+\vspace{-5pt}
+\section{\textbf{CERTIFICATIONS}}
+\begin{description}[font=$\bullet$]
+\item Successfully completed the Machine Learning certification course on Coursera. \href{https://drive.google.com/file/d/1-AnMXbZVI3lZXvCJexYx-hxGgdTzYUvx/view?usp=sharing}{\textbf{Link}} 
+\item Earned certification of \textbf{Web development} Course by Angela U   \href{https://drive.google.com/file/d/1-F1p3DlWlUJzX9sG9fMgctYJP6RlNcM5/view?usp=sharing}{\textbf{Link}}
+\item Certificate of Completion Of the\textbf{ FLY}-Scholar (Finding the Leader in You - Scholar) program \href{https://drive.google.com/file/d/1GfDlGkMC6iXiMeSnQRKLdYqzCc-F1wbo/view?usp=sharing}{\textbf{Link}}
+\end{itemize} 
+\vspace{-5pt}
+
+\section{\textbf{EXTRACURRICULAR ACTIVITIES}}
+\begin{description}[font=$\bullet$]
+\item Lead educational programs for \textbf{underprivileged} children at \textbf{Prayaas NIT'J} emphasizing effective \textbf{communication } and \textbf{community involvement}.
+\item \textbf{leadership} by coordinating \textbf{teaching} ,\textbf{organizing events},and supporting the intellectual growth and well-being of underprivileged children.
+
+\end{document}
